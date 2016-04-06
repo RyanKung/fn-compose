@@ -18,6 +18,8 @@ setup(
     author_email='ryankung@ieee.org',
     py_modules=['compose'],
     license='MIT',
+    url='https://github.com/RyanKung/compose.git',
+    download_url='https://github.com/RyanKung/compose/tarball/master',
     long_description='''
     Make python support function compostion with matrix_mul operator
 
