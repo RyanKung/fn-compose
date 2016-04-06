@@ -1,3 +1,6 @@
+from typing import Iterable, Callable
+
+
 class Compose:
     """
     Make python support function compostion
@@ -17,15 +20,28 @@ class Compose:
     >>> (a@b@c)(1)
     4
 
-    """
-    def __init__(self, function):
-        self.function = function
+    >>> list([1, 2, 3] | (a@b@c))
+    [4, 5, 6]
 
-    def __matmul__(self, other):
-        return Compose(lambda *args, **kwargs: self.function(other(*args, **kwargs)))
+    >>> list((a@b@c) << [1, 2, 3])
+    [4, 5, 6]
+
+
+    """
+    def __init__(self, fn: Callable):
+        self.fn = fn
+
+    def __matmul__(self, fn: Callable):
+        return Compose(lambda *args, **kwargs: self.fn(fn(*args, **kwargs)))
+
+    def __ror__(self, xs: Iterable):
+        return map(self.fn, xs)
+
+    def __lshift__(self, xs: Iterable):
+        return map(self.fn, xs)
 
     def __call__(self, *args, **kwargs):
-        return self.function(*args, **kwargs)
+        return self.fn(*args, **kwargs)
 
 
 if __name__ == "__main__":
