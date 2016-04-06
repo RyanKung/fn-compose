@@ -40,7 +40,7 @@ setup(
     ''',
 
     classifiers=[
-        'Development Status :: Alpha',
+        'Development Status :: 4 - Beta',
         'Environment :: Console',
         'Programming Language :: Python::3.5',
         "Operating System :: OS Independent",
