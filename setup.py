@@ -19,7 +19,7 @@ setup(
     py_modules=['compose'],
     license='MIT',
     url='https://github.com/RyanKung/fn-compose.git',
-    download_url='https://github.com/RyanKung/fn-compose/tarball/master',
+    download_url='https://github.com/RyanKung/fn-compose/tarball/1.0/',
     long_description='''
     Make python support function compostion with matrix_mul operator
 
