@@ -11,15 +11,15 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='compostion',
+    name='fn-compose',
     version='1.0',
     description='',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
     py_modules=['compose'],
     license='MIT',
-    url='https://github.com/RyanKung/compose.git',
-    download_url='https://github.com/RyanKung/compose/tarball/master',
+    url='https://github.com/RyanKung/fn-compose.git',
+    download_url='https://github.com/RyanKung/fn-compose/tarball/master',
     long_description='''
     Make python support function compostion with matrix_mul operator
 
