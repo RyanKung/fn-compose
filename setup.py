@@ -12,14 +12,14 @@ except ImportError:
 
 setup(
     name='fn-compose',
-    version='1.0',
+    version='1.1',
     description='',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
     py_modules=['compose'],
     license='MIT',
     url='https://github.com/RyanKung/fn-compose.git',
-    download_url='https://github.com/RyanKung/fn-compose/tarball/1.0/',
+    download_url='https://github.com/RyanKung/fn-compose/tarball/1.1/',
     long_description='''
     Make python support function compostion with matrix_mul operator
 
