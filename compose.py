@@ -1,6 +1,6 @@
 class Compose:
     """
-    Make python support function compostion like fpl
+    Make python support function compostion
 
     >>> @Compose
     ... def a(x):

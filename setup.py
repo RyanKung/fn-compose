@@ -19,7 +19,7 @@ setup(
     py_modules=['compose'],
     license='MIT',
     long_description='''
-    Make python support function compostion like fpl
+    Make python support function compostion with matrix_mul operator
 
     >>> @Compose
     ... def a(x):
