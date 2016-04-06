@@ -11,7 +11,7 @@ except ImportError:
     from distutils.core import setup
 
 setup(
-    name='compose',
+    name='compostion',
     version='1.0',
     description='',
     author='Ryan Kung',
@@ -42,7 +42,7 @@ setup(
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
-        'Programming Language :: Python::3.5',
+        "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries :: Python Modules"
