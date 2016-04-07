@@ -1,7 +1,7 @@
-from typing import Iterable, Callable
+from typing import Iterable, Callable, Any
 
 
-class Compose:
+class Compose(object):
     """
     Make python support function compostion
 
@@ -28,19 +28,19 @@ class Compose:
 
 
     """
-    def __init__(self, fn: Callable):
+    def __init__(self, fn: Callable) -> Callable:
         self.fn = fn
 
-    def __matmul__(self, fn: Callable):
+    def __matmul__(self, fn: Callable) -> Callable:
         return Compose(lambda *args, **kwargs: self.fn(fn(*args, **kwargs)))
 
-    def __ror__(self, xs: Iterable):
+    def __ror__(self, xs: Iterable) -> Iterable:
         return map(self.fn, xs)
 
-    def __lshift__(self, xs: Iterable):
+    def __lshift__(self, xs: Iterable) -> Iterable:
         return map(self.fn, xs)
 
-    def __call__(self, *args, **kwargs):
+    def __call__(self, *args, **kwargs) -> Any:
         return self.fn(*args, **kwargs)
 
 
