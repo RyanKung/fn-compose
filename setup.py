@@ -12,7 +12,7 @@ except ImportError:
 
 setup(
     name='fn-compose',
-    version='1.1.2-b1',
+    version='1.1.2-b2',
     description='',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
@@ -39,7 +39,7 @@ setup(
     ...     return x + 2
 
     >>> (a@b@c)(1)
-    4
+    ... 4
 
 Compose and Currying
 
@@ -47,9 +47,10 @@ Compose and Currying
     >>> add % 3
     ... partial(add, 3)
     >>> (add%3@add)(1, 2)
-    6
+    ... 6
 
-Pipe / Stream
+Pipe adn Stream
+
     >>> [1, 2, 3] | (a@b@c)
     ... map(a@b@c, [4, 5, 6])
 
