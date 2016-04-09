@@ -1,4 +1,5 @@
 from typing import Iterable, Callable, Any
+from functools import partial
 
 
 class Compose(object):
@@ -28,11 +29,18 @@ class Compose(object):
 
 
     """
+    @staticmethod
+    def compose(fn0, fn1):
+        return lambda *args, **kwargs: fn0(fn1(*args, **kwargs))
+
     def __init__(self, fn: Callable) -> Callable:
         self.fn = fn
 
+    def __mod__(self, value) -> Callable:
+        return Compose(partial(self.fn, value))
+
     def __matmul__(self, fn: Callable) -> Callable:
-        return Compose(lambda *args, **kwargs: self.fn(fn(*args, **kwargs)))
+        return Compose(self.compose(self.fn, fn))
 
     def __ror__(self, xs: Iterable) -> Iterable:
         return map(self.fn, xs)
@@ -42,8 +50,3 @@ class Compose(object):
 
     def __call__(self, *args, **kwargs) -> Any:
         return self.fn(*args, **kwargs)
-
-
-if __name__ == "__main__":
-    import doctest
-    doctest.testmod()
