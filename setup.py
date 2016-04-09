@@ -12,23 +12,20 @@ except ImportError:
 
 setup(
     name='fn-compose',
-    version='1.1.2',
+    version='1.1.2-b1',
     description='',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
     py_modules=['compose'],
     license='MIT',
     url='https://github.com/RyanKung/fn-compose.git',
-    download_url='https://github.com/RyanKung/fn-compose/tarball/1.1.1/',
+    download_url='https://github.com/RyanKung/fn-compose/tarball/1.1.2/',
     long_description='''
-### Make python support function compostion via the matmul operator
+    Make python support function compostion via the matmul operator
 
+    Compose
 
-#### Compose
-
-```
-    from compose import Compose
-    
+    >>> from compose import Compose
     >>> @Compose
     ... def a(x):
     ...     return x
@@ -43,29 +40,23 @@ setup(
 
     >>> (a@b@c)(1)
     4
-```
-### Compose and Currying
 
-```
-    from compose.operator import *
+Compose and Currying
+
+    >>> from compose.operator import *
     >>> add % 3
-    partial(add, 3)
-    
+    ... partial(add, 3)
     >>> (add%3@add)(1, 2)
     6
-```
 
-
-### Pipe / Stream
-```
+Pipe / Stream
     >>> [1, 2, 3] | (a@b@c)
-    map(a@b@c, [4, 5, 6])
+    ... map(a@b@c, [4, 5, 6])
 
     >>> (a@b@c) << [1, 2, 3]
-    map(a@b@c, [4, 5, 6])
+    ... map(a@b@c, [4, 5, 6])
 
-```
-    ''',
+   ''',
 
     classifiers=[
         'Development Status :: 4 - Beta',
