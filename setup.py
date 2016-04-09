@@ -12,8 +12,8 @@ except ImportError:
 
 setup(
     name='fn-compose',
-    version='1.1.2-b2',
-    description='',
+    version='1.1.2b3',
+    description='Make python support function compostion via the matmul operator',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
     py_modules=['compose'],
@@ -23,7 +23,7 @@ setup(
     long_description='''
     Make python support function compostion via the matmul operator
 
-    Compose
+Compose
 
     >>> from compose import Compose
     >>> @Compose
@@ -62,7 +62,7 @@ Pipe adn Stream
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
-        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
         "Operating System :: OS Independent",
         "Topic :: Software Development",
         "Topic :: Software Development :: Libraries :: Python Modules"
