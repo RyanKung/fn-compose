@@ -1,22 +1,16 @@
 # coding:utf8
 
-try:
-    import distribute_setup
-    distribute_setup.use_setuptools()
-except:
-    pass
-try:
-    from setuptools import setup
-except ImportError:
-    from distutils.core import setup
+from setuptools import setup, find_packages
 
 setup(
     name='fn-compose',
-    version='1.1.3',
+    version='1.1.3.1',
     description='Make python support function compostion via the matmul operator',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
     package_dir={'': '.'},
+    py_modules=find_packages(exclude=['tests', 'docs']),
+    packages=find_packages(exclude=['tests', 'docs']),
     license='MIT',
     url='https://github.com/RyanKung/fn-compose.git',
     download_url='https://github.com/RyanKung/fn-compose/tarball/1.1.2/',
