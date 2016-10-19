@@ -12,11 +12,11 @@ except ImportError:
 
 setup(
     name='fn-compose',
-    version='1.1.2b3',
+    version='1.1.3',
     description='Make python support function compostion via the matmul operator',
     author='Ryan Kung',
     author_email='ryankung@ieee.org',
-    py_modules=['compose'],
+    package_dir={'': '.'},
     license='MIT',
     url='https://github.com/RyanKung/fn-compose.git',
     download_url='https://github.com/RyanKung/fn-compose/tarball/1.1.2/',
